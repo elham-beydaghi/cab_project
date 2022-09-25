@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from CabPriceRatioProject.CabPriceApp.models import PriceWeightModel
+from CabPriceApp.models import PriceWeightModel
 
 
 class PriceWeightSerializer(serializers.ModelSerializer):
