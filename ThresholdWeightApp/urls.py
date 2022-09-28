@@ -1,5 +1,5 @@
 from django.urls import path
-from . import views
+import ThresholdWeightApp.views as views
 
 app_name = 'threshold_weight_app'
 urlpatterns = [

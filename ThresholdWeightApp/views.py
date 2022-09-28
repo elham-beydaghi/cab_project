@@ -1,5 +1,5 @@
-from .models import ThresholdWeightModel
-from .serializers import ThresholdWeightSerializer
+from ThresholdWeightApp.models import ThresholdWeightModel
+from ThresholdWeightApp.serializers import ThresholdWeightSerializer
 
 from rest_framework import status
 from rest_framework.views import APIView
