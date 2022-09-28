@@ -1,7 +1,7 @@
 from django.urls import path
 import ThresholdWeightApp.views as views
 
-app_name = 'threshold_weight_app'
+app_name = 'ThresholdWeightApp'
 urlpatterns = [
     path('thresholds-weights/', views.ThresholdWeightListView.as_view()),
     path('threshold-weight/create/', views.ThresholdWeightCreateView.as_view()),

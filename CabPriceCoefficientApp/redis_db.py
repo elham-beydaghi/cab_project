@@ -1,11 +1,10 @@
 from typing import Union
 
-import Singleton as Singleton
 import ujson
 import redis
 
 
-class RedisDataBaseAccessObject(metaclass=Singleton):
+class RedisDataBaseAccessObject:
 
     def __int__(self):
         self.redis_client = redis.Redis(host='hostname', port=6379)

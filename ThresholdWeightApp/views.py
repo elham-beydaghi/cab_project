@@ -26,7 +26,7 @@ class ThresholdWeightCreateView(APIView):
 class ThresholdWeightUpdateView(APIView):
     def put(self, request, pk=None):
         threshold_weight = ThresholdWeightModel.objects.get(pk=pk)
-        serialized_threshold_weight = ThresholdWeightSerializer(instance=threshold_weight, data=request.data)
+        serialized_threshold_weight = ThresholdWeightSerializer(instance=threshold_weight, data=request.data, partial=True)
         if serialized_threshold_weight.is_valid():
             serialized_threshold_weight.save()
             return Response(serialized_threshold_weight.data, status=status.HTTP_200_OK)
