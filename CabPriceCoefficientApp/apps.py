@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class CabpriceappConfig(AppConfig):
+class CabpricecoefficientappConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'CabPriceApp'
+    name = 'CabPriceCoefficientApp'
