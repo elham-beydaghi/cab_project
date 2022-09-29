@@ -16,6 +16,4 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'CabPriceCoefficientProject.sett
 import django
 django.setup()
 
-from django.core.management import call_command
-
 application = get_wsgi_application()
