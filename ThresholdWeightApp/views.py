@@ -7,6 +7,11 @@ from rest_framework.response import Response
 
 
 class ThresholdWeightListView(APIView):
+    """
+        Get lists of pair request-threshold and price-coefficient
+    """
+
+    serializer_class = ThresholdWeightSerializer
 
     def get(self, request) -> Response:
         thresholds_weights = ThresholdWeightModel.objects.all()
@@ -16,6 +21,12 @@ class ThresholdWeightListView(APIView):
 
 
 class ThresholdWeightCreateView(APIView):
+    """
+        Create pair request-threshold and price-coefficient
+    """
+
+    serializer_class = ThresholdWeightSerializer
+
     def post(self, request) -> Response:
         serialized_threshold_weight: ThresholdWeightSerializer = ThresholdWeightSerializer(data=request.data)
         if serialized_threshold_weight.is_valid():
@@ -25,6 +36,12 @@ class ThresholdWeightCreateView(APIView):
 
 
 class ThresholdWeightUpdateView(APIView):
+    """
+       Update pair request-threshold and price-coefficient with primary key
+    """
+
+    serializer_class = ThresholdWeightSerializer
+
     def put(self, request, pk: int = None) -> Response:
         threshold_weight = ThresholdWeightModel.objects.get(pk=pk)
         serialized_threshold_weight: ThresholdWeightSerializer = ThresholdWeightSerializer(instance=threshold_weight,
@@ -37,6 +54,12 @@ class ThresholdWeightUpdateView(APIView):
 
 
 class ThresholdWeightDeleteView(APIView):
+    """
+        Delete pair request-threshold and price-coefficient with primary key
+    """
+
+    serializer_class = ThresholdWeightSerializer
+
     def delete(self, request, pk: int = None) -> Response:
         try:
             threshold_weight = ThresholdWeightModel.objects.get(pk=pk)
