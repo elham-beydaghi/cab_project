@@ -2,14 +2,13 @@ from rest_framework.response import Response
 from rest_framework import status
 
 from CabPriceCoefficientApp.redis_db import RedisDataBaseAccessObject
+from CabPriceCoefficientApp.serializers import CabPriceCoefficientSerializer
 from ThresholdWeightApp.models import ThresholdWeightModel
-from ThresholdWeightApp.serializers import ThresholdWeightSerializer
 
 from rest_framework.views import APIView
 
 import hashlib
 from geopy.geocoders import Nominatim
-import json
 import re
 import datetime
 
@@ -57,5 +56,5 @@ class CabPriceCoefficientView(APIView):
             requests_threshold__lte=number_of_requests_in_cab_location).order_by('-requests_threshold').values()[:1]
         if threshold_coefficient_record:
             threshold_coefficient_record_dict = threshold_coefficient_record.get()
-            serialized_threshold_coefficient_record = ThresholdWeightSerializer(threshold_coefficient_record_dict)
+            serialized_threshold_coefficient_record = CabPriceCoefficientSerializer(threshold_coefficient_record_dict)
             return serialized_threshold_coefficient_record
