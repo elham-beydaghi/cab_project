@@ -22,6 +22,7 @@ class CabPriceCoefficientView(APIView):
         self.redis_dao = RedisDataBaseAccessObject()
 
     def post(self, request) -> Response:
+
         latitude_and_longitude_dict: Dict = request.data
         geolocator = Nominatim(user_agent="snapp_cab_app")
         address_of_the_cab: Dict = \
@@ -31,7 +32,8 @@ class CabPriceCoefficientView(APIView):
             request_id: str = self._set_request_id_in_redis(latitude_and_longitude_dict, address_of_the_cab)
             serialized_threshold_coefficient_record: CabPriceCoefficientSerializer = \
                 self._get_price_coefficient_from_request_threshold(request_id)
-            return Response(serialized_threshold_coefficient_record.data, status=status.HTTP_200_OK)
+            if serialized_threshold_coefficient_record:
+                return Response(serialized_threshold_coefficient_record.data, status=status.HTTP_200_OK)
         return Response(status=status.HTTP_400_BAD_REQUEST)
 
     @staticmethod
@@ -44,9 +46,8 @@ class CabPriceCoefficientView(APIView):
         date_time_now: str = now.strftime("%Y-%m-%d %H:%M:%S")
 
         suburb_of_cab_location: str = address_of_the_cab.get("suburb")
-        cab_origin_number: str = re.findall(r'\d+', suburb_of_cab_location)[0]
 
-        return '{}:{}:{}'.format(cab_origin_number, data_hash, date_time_now)
+        return '{}:{}:{}'.format(suburb_of_cab_location, data_hash, date_time_now)
 
     def _set_request_id_in_redis(self, data: dict, address_of_the_cab: dict) -> str:
         request_id: str = self._create_request_key_to_store_in_redis(data, address_of_the_cab)
