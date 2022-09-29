@@ -6,8 +6,8 @@ import redis
 
 class RedisDataBaseAccessObject:
 
-    def __int__(self):
-        self.redis_client = redis.Redis(host='hostname', port=6379)
+    def __init__(self):
+        self.redis_client = redis.Redis(host='localhost', port=6379)
 
     def set_request_id(self, request_id: str) -> None:
         ok_value: bytes = ujson.dumps("ok").encode()
