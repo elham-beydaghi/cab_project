@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 
+from CabPriceCoefficientApp.apps import CabPriceCoefficientAppConfig
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -77,10 +79,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'threshold_weight_database',
-        'USER': 'root',
-        'PASSWORD': 'admin',
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
+        'USER': CabPriceCoefficientAppConfig.MYSQL_USER,
+        'PASSWORD': CabPriceCoefficientAppConfig.MYSQL_PASSWORD,
+        'HOST': CabPriceCoefficientAppConfig.MYSQL_HOST,
+        'PORT': CabPriceCoefficientAppConfig.MYSQL_PORT,
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
         }
