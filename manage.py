@@ -14,7 +14,7 @@ def load_into_config():
     dotenv_path = join(dirname(__file__), '.env')
     load_dotenv(dotenv_path)
     CabPriceCoefficientAppConfig.REDIS_HOST = os.environ.get("REDIS_HOST")
-    CabPriceCoefficientAppConfig.REDIS_PORT = os.environ.get("REDIS_POST")
+    CabPriceCoefficientAppConfig.REDIS_PORT = os.environ.get("REDIS_PORT")
     CabPriceCoefficientAppConfig.MYSQL_HOST = os.environ.get("MYSQL_HOST")
     CabPriceCoefficientAppConfig.MYSQL_PORT = os.environ.get("MYSQL_PORT")
     CabPriceCoefficientAppConfig.MYSQL_USER = os.environ.get("MYSQL_USER")
