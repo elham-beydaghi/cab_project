@@ -17,9 +17,8 @@ def load_into_config():
     CabPriceCoefficientAppConfig.REDIS_PORT = os.environ.get("REDIS_POST")
     CabPriceCoefficientAppConfig.MYSQL_HOST = os.environ.get("MYSQL_HOST")
     CabPriceCoefficientAppConfig.MYSQL_PORT = os.environ.get("MYSQL_PORT")
-    CabPriceCoefficientAppConfig.MYSQL_USER = os.environ.get("MYSQL_PORT")
+    CabPriceCoefficientAppConfig.MYSQL_USER = os.environ.get("MYSQL_USER")
     CabPriceCoefficientAppConfig.MYSQL_PASSWORD = os.environ.get("MYSQL_PASSWORD")
-
 
 
 def main():

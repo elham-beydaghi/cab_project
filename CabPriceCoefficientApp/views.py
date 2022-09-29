@@ -11,7 +11,6 @@ from rest_framework.views import APIView
 
 import hashlib
 from geopy.geocoders import Nominatim
-import re
 import datetime
 
 
