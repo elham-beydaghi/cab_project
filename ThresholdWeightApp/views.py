@@ -37,7 +37,7 @@ class ThresholdWeightCreateView(APIView):
 
 class ThresholdWeightUpdateView(APIView):
     """
-       Update pair request-threshold and price-coefficient with primary key
+       Update pair request-threshold and price-coefficient with primary key (request_thresholds)
     """
 
     serializer_class = ThresholdWeightSerializer
@@ -55,7 +55,7 @@ class ThresholdWeightUpdateView(APIView):
 
 class ThresholdWeightDeleteView(APIView):
     """
-        Delete pair request-threshold and price-coefficient with primary key
+        Delete pair request-threshold and price-coefficient with primary key (request_thresholds)
     """
 
     serializer_class = ThresholdWeightSerializer

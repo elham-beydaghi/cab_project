@@ -2,7 +2,7 @@
 
 ## Description
 This project developed with the Django framework, we used redis and mysql to store data on disk and memory.
-You can find more details about the architecture of the app [Here](http://google.com "Documentation").
+You can find more details about the architecture of the app [Here](https://docs.google.com/document/d/1lxNwPbmBKvHfI7o__nikO-RH5LI71XTzyIGizDftUmE/edit?usp=sharing "Documentation").
 Also you can see api's input/output data in http://localhost:8000/shema/redoc/ ,after the project gets running.
 
 
