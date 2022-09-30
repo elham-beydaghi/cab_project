@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'ThresholdWeightApp',
     'CabPriceCoefficientApp',
     'drf_spectacular',
-    'drf_yasg',
 ]
 
 MIDDLEWARE = [
