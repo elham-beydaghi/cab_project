@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'ThresholdWeightApp',
     'CabPriceCoefficientApp',
     'drf_spectacular',
-    'py_yaml_fixtures',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [

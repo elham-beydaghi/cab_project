@@ -7,4 +7,3 @@ redis==4.3.4
 drf-spectacular==0.24.2
 PyYAML==6.0
 uritemplate==4.1.1
-Py-YAML-Fixtures==0.6.1
