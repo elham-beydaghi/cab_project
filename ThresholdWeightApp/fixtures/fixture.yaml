@@ -1,0 +1,38 @@
+- model: ThresholdWeightModel
+  pk: 0
+  fields:
+    requests_threshold: 0
+    price_coefficient: 1
+- model: ThresholdWeightModel
+  pk: 1000
+  fields:
+    requests_threshold: 1000
+    price_coefficient: 1.05
+- model: ThresholdWeightModel
+  pk: 3000
+  fields:
+    requests_threshold: 3000
+    price_coefficient: 1.1
+- model: ThresholdWeightModel
+  pk: 5000
+  fields:
+    requests_threshold: 5000
+    price_coefficient: 1.2
+- model: ThresholdWeightModel
+  pk: 10000
+  fields:
+    requests_threshold: 10000
+    price_coefficient: 1.5
+- model: ThresholdWeightModel
+  pk: 25000
+  fields:
+    requests_threshold: 25000
+    price_coefficient: 2
+- model: ThresholdWeightModel
+  pk: 50000
+  fields:
+    requests_threshold: 50000
+    price_coefficient: 3
+ 
+ 
+
